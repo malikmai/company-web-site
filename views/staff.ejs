@@ -4,21 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
+    <link rel="stylesheet" href="./css/app.css" />
   </head>
   <body>
     <%- include('./partials/nav') %>
     <h1>Meet the Staff</h1>
-    <ul>
-      <% office.staff.forEach(function(member) { %>
+    <div id="siteContent">
       <ul>
-        <h3><%= member.name %></h3>
-        <p>Category: <%= member.category %></p>
-        <p>Contact: <%= member.contact %></p>
-        <p>
-          Email: <a href="mailto:<%= member.email %>"><%= member.email %></a>
-        </p>
+        <% office.staff.forEach(function(member) { %>
+        <ul>
+          <h3><%= member.name %></h3>
+          <p>Category: <%= member.category %></p>
+          <p>Contact: <%= member.contact %></p>
+          <p>
+            Email: <a href="mailto:<%= member.email %>"><%= member.email %></a>
+          </p>
+        </ul>
+        <% }) %>
       </ul>
-      <% }) %>
-    </ul>
+    </div>
   </body>
 </html>

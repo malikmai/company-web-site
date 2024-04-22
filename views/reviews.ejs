@@ -3,19 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="./css/app.css" />
   </head>
   <body>
     <%- include('./partials/nav') %>
     <h1>Client Reviews</h1>
-    <ul>
-      <% reviews.forEach(function(review) { %>
+    <div id="siteContent">
       <ul>
-        <h3>Review by <%= review.client %></h3>
-        <p><%= review.text %></p>
-        <p>Rating: <%= review.rating %> stars</p>
+        <% reviews.forEach(function(review) { %>
+        <ul>
+          <h3>Review by <%= review.client %></h3>
+          <p><%= review.text %></p>
+          <p>Rating: <%= review.rating %> stars</p>
+        </ul>
+        <% }) %>
       </ul>
-      <% }) %>
-    </ul>
+    </div>
   </body>
 </html>

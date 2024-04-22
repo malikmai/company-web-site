@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
+    <link rel="stylesheet" href="./css/app.css" />
   </head>
   <body>
     <%- include('./partials/nav') %>
-    <h1>Company History</h1>
-    <p>
-      Established in <%= established %>, <%= office.name %> is a law firm
-      dedicated to excellence and client satisfaction. Below is a brief history
-      of our firm:
-    </p>
-    <p><%= history %></p>
-    <p>Address: <%= office.address %></p>
-    <p>Phone: <%= office.phone %></p>
+    <div id="siteContent">
+      <h1>Company History</h1>
+      <p>
+        Established in <%= established %>, <%= office.name %> is a law firm
+        dedicated to excellence and client satisfaction. Below is a brief
+        history of our firm:
+      </p>
+      <p><%= history %></p>
+      <p>Address: <%= office.address %></p>
+      <p>Phone: <%= office.phone %></p>
+    </div>
   </body>
 </html>

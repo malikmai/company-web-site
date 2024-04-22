@@ -82,13 +82,14 @@ app.get("/about", (req, res) => {
   });
 });
 app.post("/submit-contact-form", (req, res) => {
-    console.log("Received contact form submission");
-    // Here you would handle the form data, e.g., store it in a database or send an email
-    res.send("Thank you for your message. We will get back to you soon.");
+  console.log("Received contact form submission");
+  // Here you would handle the form data, e.g., store it in a database or send an email
+  res.send("Thank you for your message. We will get back to you soon.");
 });
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.use(express.static("public"));
 
 app.listen(3000);
 console.log("Listening 3000");
