@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= title %></title>
 </head>
 <body>
-    <%- include('./partials/nav') %>
+    <%- include('partials/nav') %>
+    <h1>Contact Us</h1>
+    <p>Please find our contact details below and feel free to leave us a message via the form.</p>
+
+    <h3>Office Address</h3>
+    <p><%= office.address %></p>
+
+    <h3>Phone</h3>
+    <p><%= office.phone %></p>
+
+    <h3>Email Us</h3>
+    <form action="/submit-contact-form" method="post">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
