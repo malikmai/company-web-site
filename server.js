@@ -29,6 +29,23 @@ const OFFICE = {
       category: "Judge",
     },
   ],
+  reviews: [
+    {
+      client: "Alice Johnson",
+      text: "Excellent service with a personal touch. Highly recommended!",
+      rating: 5,
+    },
+    {
+      client: "Bobby Smith",
+      text: "Very professional team. They handled my case with care and expertise.",
+      rating: 4,
+    },
+    {
+      client: "Cathy Lee",
+      text: "Outstanding commitment and results! Thank you!",
+      rating: 5,
+    },
+  ],
 };
 
 app.get("/", (req, res) => {
@@ -40,12 +57,14 @@ app.get("/staff", (req, res) => {
   res.render("staff", { title: "Our Staff - " + OFFICE.name, office: OFFICE });
 });
 app.get("/reviews", (req, res) => {
-  console.log("Reviews page accessed");
-  res.render("reviews", {
-    title: "Client Reviews - " + OFFICE.name,
-    office: OFFICE,
+    console.log("Reviews page accessed");
+    res.render("reviews", {
+      title: "Client Reviews - " + OFFICE.name,
+      office: OFFICE,
+      reviews: OFFICE.reviews
+    });
   });
-});
+  
 app.get("/contact", (req, res) => {
   console.log("Contact page accessed");
   res.render("contact", {

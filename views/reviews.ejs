@@ -7,5 +7,15 @@
 </head>
 <body>
     <%- include('./partials/nav') %>
+    <h1>Client Reviews</h1>
+    <ul>
+        <% reviews.forEach(function(review) { %>
+            <li>
+                <h3>Review by <%= review.client %></h3>
+                <p><%= review.text %></p>
+                <p>Rating: <%= review.rating %> stars</p>
+            </li>
+        <% }) %>
+    </ul>
 </body>
 </html>
